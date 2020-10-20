@@ -1,6 +1,6 @@
 # Information-theoretic Task Selection for Meta-Reinforcement Learning.
 
-This repository contains code used in the paper Information-theoretic Task Selection for Meta-Reinforcement Learning. It includes the code used for Task Selection of five different domains.
+This repository contains code used in the paper Information-theoretic Task Selection for Meta-Reinforcement Learning. It includes the code used for Task Selection of five different domains. For training the individual tasks and the meta-RL Agents [garage](https://github.com/rlworkgroup/garage) was used.
 
 ### Dependencies
 Our code requires:
