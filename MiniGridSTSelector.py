@@ -50,7 +50,7 @@ def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number
                     state_samples = []
 
                     # trainer = 1
-                    env = validationTasks[target]
+                    env = validationTasks[targetTask]
                     env = TfEnv(normalize(env))
                     runner.restore(from_dir=saved_dir,env = env)
 
