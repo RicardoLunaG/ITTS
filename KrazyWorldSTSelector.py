@@ -18,7 +18,7 @@ testing_inputs_total = []
 def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number= 0):
         
 
-    validationTasks = []
+    validationTasks = [] #Validation Tasks
 
     isUssefulEntropy_Final = False
 
