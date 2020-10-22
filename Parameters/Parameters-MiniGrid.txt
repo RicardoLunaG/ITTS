@@ -2,7 +2,7 @@ MiniGrid Parameters:
 
 Training Tasks
 
-"[Seed,Initial Agents Pos, Goal Initial Pos]" #TL = Top Left, TR = Top Right, BL = Bottom Left, BR = Bottom Right
+"[Seed,Initial Agents Pos, Goal Initial Pos] #TL = Top Left, TR = Top Right, BL = Bottom Left, BR = Bottom Right]"
 [43,BR,TL]
 [62,BR,TL]
 [41,BR,TL]
@@ -52,5 +52,12 @@ Validation Tasks
 [36,TL,BR]
 [31,TR,BR]
 [41,TR,BR]
-[28,TL,BR]
+[28,BR,TL]
 
+Test Tasks
+
+[23,TL,BR]
+[2,TL,BR]
+[54,BR,TL]
+[19,BR,TL]
+[27,TR,BR]
