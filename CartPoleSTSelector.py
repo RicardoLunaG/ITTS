@@ -175,7 +175,7 @@ def extract_action_prob(test_number, task = 0,number_test_inputs=20):
         with tf.compat.v1.Session() as sess:
             
             with LocalTFRunner(snapshot_config=ctxt,sess=sess) as runner:
-                saved_dir = "./LoadDir/CartPole/Test"+str(task)
+                saved_dir = "./LoadDir/CartPole/Task"+str(task)
                 
                 runner.restore(from_dir=saved_dir)
 
