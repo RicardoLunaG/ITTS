@@ -128,8 +128,8 @@ def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number
     return isUssefulEntropy_Final
 
 averageError = 0
-def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0):
-    
+def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0, starting_task = 0):
+    starting_task = starting_task
     global averageError
     isDifferent = True
     isUssefulEntropy = None
@@ -216,7 +216,7 @@ def main(load_model = False):
     for t in range(starting_task, taskRange):
         
         
-        extract_action_prob(test_number,t,number_test_inputs=number_test_inputs)
+        extract_action_prob(test_number,t,number_test_inputs=number_test_inputs,starting_task = starting_task)
         saved = TaskSelection(dif_value,task=t,test_number=test_number,number_test_inputs=number_test_inputs)
         
         if saved:
