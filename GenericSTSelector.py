@@ -216,8 +216,8 @@ def main(load_model = False):
     for t in range(starting_task, taskRange):
         
         
-        extract_action_prob(test_number,t,number_test_inputs=number_test_inputs,starting_task = starting_task)
-        saved = TaskSelection(dif_value,task=t,test_number=test_number,number_test_inputs=number_test_inputs)
+        extract_action_prob(test_number,t,number_test_inputs=number_test_inputs)
+        saved = TaskSelection(dif_value,task=t,test_number=test_number,number_test_inputs=number_test_inputs,starting_task = starting_task)
         
         if saved:
             acepted_tasks.append(t)
