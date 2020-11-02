@@ -129,7 +129,6 @@ averageError = 0
 def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0, starting_task = 0):
     
     global averageError
-    starting_task = starting_task
     isDifferent = True
     isUssefulEntropy = None
     difference_acceptance = dif_value 
