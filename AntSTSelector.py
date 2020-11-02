@@ -137,7 +137,6 @@ def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number
 averageError = 0
 def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0, starting_task = 0):
     
-    starting_task = starting_task
     global averageError
     isDifferent = True
     isUssefulEntropy = None
