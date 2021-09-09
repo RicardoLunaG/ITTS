@@ -7,7 +7,6 @@ import scipy
 from garage.tf.envs import TfEnv
 from garage.tf.experiment import LocalTFRunner
 from garage.envs import normalize
-import sys
 from garage.experiment.experiment import ExperimentContext
 
 
@@ -25,7 +24,6 @@ def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number
  
     final_entrop_list = []
 
-    np.set_printoptions(threshold=sys.maxsize)
 
     @wrap_experiment(log_dir="./LoadDir/CartPole/TaskST"+str(source_task),snapshot_mode="none",snapshot_gap= 0,use_existing_dir=True,name="TaskSTTask"+str(source_task))
     def evaluate_target_tasks(ctxt=None,targetTask=0, STATE_SAMPLEs = 100):
@@ -137,12 +135,9 @@ def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0,sta
             deltakl = 0
             
             for j in range(number_test_inputs):
-                try:
+                
                     deltakl += abs(scipy.stats.entropy(action_probs_global[key-starting_task][j],action_probs_global[task-starting_task][j]))
-                    
-                except:
-                    print("Error on j {} key {}".format(j,key))
-                    sys.exit()
+
             deltakl = deltakl/(number_test_inputs)
             
             if deltakl < difference_acceptance:
