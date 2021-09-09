@@ -4,6 +4,7 @@ This repository contains code used in the paper Information-theoretic Task Selec
 
 ### Dependencies
 Our code requires:
+* python 3.*
 * numpy
 * tensorflow v1.7+
 * scipy
