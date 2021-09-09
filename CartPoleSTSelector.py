@@ -136,7 +136,7 @@ def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0,sta
             
             for j in range(number_test_inputs):
                 
-                    deltakl += abs(scipy.stats.entropy(action_probs_global[key-starting_task][j],action_probs_global[task-starting_task][j]))
+                deltakl += abs(scipy.stats.entropy(action_probs_global[key-starting_task][j],action_probs_global[task-starting_task][j]))
 
             deltakl = deltakl/(number_test_inputs)
             
