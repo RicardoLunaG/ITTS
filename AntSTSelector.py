@@ -26,9 +26,7 @@ def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number
     
     x = np.arange(a_l, a_h, 0.001)
     final_entrop_list = []
-
-    np.set_printoptions(threshold=sys.maxsize)
-    
+  
 
     @wrap_experiment(log_dir="./LoadDir/Ant/Task"+str(source_task),snapshot_mode="none",snapshot_gap= 0,use_existing_dir=False,name="Task"+str(source_task))
     def evaluate_target_tasks(ctxt=None,targetTask=0,STATE_SAMPLEs = 100):
