@@ -6,7 +6,6 @@ import scipy
 from garage.tf.envs import TfEnv
 from garage.tf.experiment import LocalTFRunner
 from garage.envs import normalize
-import sys
 from garage.envs.mujoco.half_cheetah_vel_env import HalfCheetahVelEnv
 from garage.experiment.experiment import ExperimentContext
 
@@ -27,7 +26,6 @@ def UssefulnessMeasure(source_task, EPOCS = 5, NUMBER_EPISODES = 10, test_number
     x = np.arange(a_l, a_h, 0.001)
     final_entrop_list = []
 
-    np.set_printoptions(threshold=sys.maxsize)
     
 
     @wrap_experiment(log_dir="./LoadDir/HalfCheetah/Task"+str(source_task),snapshot_mode="none",snapshot_gap= 0,use_existing_dir=False,name="Task"+str(source_task))
@@ -146,13 +144,9 @@ def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0):
             deltakl = 0
             
             for j in range(number_test_inputs*A_DIM):
-                try:
-                    deltakl += abs(scipy.stats.entropy(action_probs_global[key][j],action_probs_global[task-1][j]))
-                    
-                except:
-                    
-                    print("Error on j {} key {}".format(j,key))
-                    sys.exit()
+
+                deltakl += abs(scipy.stats.entropy(action_probs_global[key][j],action_probs_global[task-1][j]))
+  
             deltakl = deltakl/(number_test_inputs*A_DIM)
             
             
