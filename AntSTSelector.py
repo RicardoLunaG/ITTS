@@ -7,7 +7,6 @@ import scipy
 from garage.tf.envs import TfEnv
 from garage.tf.experiment import LocalTFRunner
 from garage.envs import normalize
-import sys
 from garage.experiment.experiment import ExperimentContext
 from gym.envs.mujoco.ant_rand_vel import AntVelEnv
 
@@ -146,13 +145,8 @@ def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0, st
             deltakl = 0
             
             for j in range(number_test_inputs*A_DIM):
-                try:
                     deltakl += abs(scipy.stats.entropy(action_probs_global[key][j],action_probs_global[task-1][j]))
-                    
-                except:
-                    
-                    print("Error on j {} key {}".format(j,key))
-                    sys.exit()
+           
             deltakl = deltakl/(number_test_inputs*A_DIM)
             
             if deltakl < difference_acceptance: 
