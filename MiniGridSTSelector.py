@@ -141,12 +141,9 @@ def TaskSelection(dif_value, task = 0,number_test_inputs = 100,test_number=0, st
             deltakl = 0
             
             for j in range(number_test_inputs):
-                try:
-                    deltakl += abs(scipy.stats.entropy(action_probs_global[key-starting_task][j],action_probs_global[task-starting_task][j]))
-                    
-                except:
-                    print("Error on j {} key {}".format(j,key))
-                    sys.exit()
+
+                deltakl += abs(scipy.stats.entropy(action_probs_global[key-starting_task][j],action_probs_global[task-starting_task][j]))
+      
             deltakl = deltakl/(number_test_inputs)
             
             if deltakl < difference_acceptance:
